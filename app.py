@@ -6,31 +6,35 @@ import random
 # Page Configuration
 st.set_page_config(page_title="Multiple Intelligences Quiz", page_icon="🧠", layout="centered")
 
-# CUSTOM CSS: To make fonts bigger, center the radio circles, and make them larger
+# CUSTOM CSS: Making questions and clickable radio circles much bigger and centered
 st.markdown("""
 <style>
-    /* Make question text larger */
+    /* Make question text larger and bolder */
     .question-text {
-        font-size: 20px !important;
-        font-weight: 600;
-        margin-bottom: 5px;
+        font-size: 22px !important;
+        font-weight: 700;
+        color: #111111;
+        margin-bottom: 8px;
+        line-height: 1.4;
     }
     
     /* Center the horizontal radio buttons container */
     div[data-testid="stRadio"] > div {
         justify-content: center;
-        gap: 25px;
+        gap: 35px;
     }
     
-    /* Make radio option labels larger */
+    /* Make the 1 to 5 number labels larger */
     div[data-testid="stRadio"] label {
-        font-size: 18px !important;
+        font-size: 20px !important;
+        font-weight: 600;
     }
     
-    /* Make the actual radio circles bigger using CSS scaling */
+    /* Make the actual radio circles significantly bigger */
     input[type="radio"] {
-        transform: scale(1.5);
-        margin-right: 5px;
+        transform: scale(2.0);
+        margin-right: 8px;
+        cursor: pointer;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -120,7 +124,7 @@ for i, q in enumerate(questions):
         key=f"q_{i}",
         label_visibility="collapsed"
     )
-    st.write("") # Spacing
+    st.write("") # Spacing between questions
 
 st.markdown("---")
 
